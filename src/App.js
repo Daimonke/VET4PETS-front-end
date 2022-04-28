@@ -10,10 +10,10 @@ function App() {
 
   return (
     <Suspense fallback={<LoadingPage />}>
-      <HashRouter>
+      <HashRouter basename=''>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="*" element={<Page404 />} />
+          <Route path="/*" element={<Page404 />} />
         </Routes>
       </HashRouter>
     </Suspense>
