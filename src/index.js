@@ -6,7 +6,7 @@ import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter basename='/VET4PETS-front-end/'>
       <App />
     </HashRouter>
   </React.StrictMode>,
