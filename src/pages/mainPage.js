@@ -1,10 +1,8 @@
 import { ToggleButtonGroup } from '@mui/material';
 import { ToggleButton } from '@mui/material';
 import { Container } from '@mui/material';
-import axios from 'axios';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
-import { API_URI } from '../config';
 import Header from './Components/Header';
 import Pets from './Components/Pets';
 import Logs from './Components/Logs';
@@ -40,7 +38,6 @@ export default function MainPage() {
         <Container>
           {page === 'pets' ? <Pets /> : page === 'logs' ? <Logs/> : <Prescriptions/>}
         </Container>
-        <a href='/404'>404</a>
       </Container>
     </div>
   )
