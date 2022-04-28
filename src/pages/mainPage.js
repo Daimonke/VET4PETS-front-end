@@ -40,6 +40,7 @@ export default function MainPage() {
         <Container>
           {page === 'pets' ? <Pets /> : page === 'logs' ? <Logs/> : <Prescriptions/>}
         </Container>
+        <a href='/404'>404</a>
       </Container>
     </div>
   )
