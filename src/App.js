@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Suspense fallback={<LoadingPage />}>
-      <HashRouter basename='/'>
+      <HashRouter basename='/VET4PETS-front-end'>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/*" element={<Page404 />} />
