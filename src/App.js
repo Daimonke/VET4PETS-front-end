@@ -10,10 +10,10 @@ function App() {
 
   return (
     <Suspense fallback={<LoadingPage />}>
-    <Router>
+    <Router basename='/VET4PETS-front-end'>
       <Routes>
         <Route path="/" element={ <MainPage /> } />
-        <Route path="*" element={ <Page404 /> } />
+        <Route path="/*" element={ <Page404 /> } />
       </Routes>
     </Router>
     </Suspense>
