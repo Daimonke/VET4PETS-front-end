@@ -1,6 +1,7 @@
 {
   "name": "daimoapp",
   "version": "0.1.0",
+  "homepage": "https://daimonke.github.io/VET4PETS-front-end/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",
