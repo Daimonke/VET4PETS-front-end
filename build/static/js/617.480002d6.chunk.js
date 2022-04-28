@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdaimoapp=self.webpackChunkdaimoapp||[]).push([[617],{617:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});u(2791);var a=u(184);function i(){return(0,a.jsx)("div",{children:(0,a.jsx)("h1",{style:{margin:"10px"},children:"Page not found. 404"})})}}}]);
+//# sourceMappingURL=617.480002d6.chunk.js.map
