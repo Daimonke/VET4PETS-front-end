@@ -12,8 +12,8 @@ function App() {
     <Suspense fallback={<LoadingPage />}>
       <Router>
         <Routes>
-          <Route path="VET4PETS-front-end/" element={<MainPage />} />
-          <Route path="VET4PETS-front-end/*" element={<Page404 />} />
+          <Route path="/VET4PETS-front-end/" element={<MainPage />} />
+          <Route path="/VET4PETS-front-end/*" element={<Page404 />} />
         </Routes>
       </Router>
     </Suspense>
