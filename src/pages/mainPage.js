@@ -7,6 +7,7 @@ import Header from './Components/Header';
 import Pets from './Components/Pets';
 import Logs from './Components/Logs';
 import Prescriptions from './Components/Prescriptions';
+import Footer from './Components/Footer';
 
 export default function MainPage() {
   const [page, setPage] = useState('pets')
@@ -29,6 +30,7 @@ export default function MainPage() {
               : <Prescriptions />}
         </Container>
       </Container>
-    </div>
+      <Footer />
+      </div>
   )
 }

@@ -33,6 +33,10 @@ export default function Pets(props) {
     setPage('logs')
   }
   
+  function handleDelete(id){
+    axios.delete(`${API_URI}pets/${id}`)
+  }
+
   useEffect(() => {
     axios.get(`${API_URI}pets`)
       .then(function (res) {
@@ -64,7 +68,7 @@ export default function Pets(props) {
                   </Container>
                   <Container disableGutters={true} sx={{display: 'flex', justifyContent: 'center', gap: 2}}>
                   <Button variant='contained' color='warning' onClick={() => handlePetLog(pet.id)}>VIEW LOGS</Button>
-                  <Button variant='contained' color='error'>DELETE</Button>
+                  <Button variant='contained' color='error' onClick={() => handleDelete(pet.id)}>DELETE</Button>
                   </Container>
                 </Item>
               </Grid>

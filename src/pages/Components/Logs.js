@@ -10,7 +10,7 @@ import { Autocomplete } from '@mui/material'
 import { TextField } from '@mui/material'
 
 export default function Logs(props) {
-  const [showPet, setShowPet] = props.showPet
+  const [showPet] = props.showPet
   const [logs, setLogs] = useState([])
   const [showLogs, setShowLogs] = useState([])
   const allPetsData = props.allPetsData
@@ -18,14 +18,14 @@ export default function Logs(props) {
 
 function handleSearch(value){
   setShowLogs(logs.filter(log => log.name.includes(value)))
-  setShowPet('')
 }
 
   useEffect(() => {
-    axios.get(`${API_URI}logs/${showPet? showPet : ''}`)
+    axios.get(`${API_URI}logs/`)
       .then(function (res) {
         setLogs(res.data)
-        setShowLogs(res.data)
+        if(showPet) setShowLogs(res.data.filter(item => item.id === showPet))
+        if(!showPet) setShowLogs(res.data)
         setLoading(false)
       })
       .catch(function (error) {
