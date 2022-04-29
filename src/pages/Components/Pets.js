@@ -26,12 +26,20 @@ export default function Pets(props) {
   const [pets, setPets] = useState([])
   const [petsData, setPetsData] = useState([])
   const [loading, setLoading] = useState(true)
+  const [showPet, setShowPet] = props.showPet
 
+  function handlePetLog(petid){
+    setShowPet(petid)
+    setPage('logs')
+  }
+  
   useEffect(() => {
     axios.get(`${API_URI}pets`)
       .then(function (res) {
         setPetsData(res.data)
         setPets(res.data)
+        props.setAllPetsData(res.data)
+        setShowPet('')
         setLoading(false)
       })
       .catch(function (error) {
@@ -55,7 +63,7 @@ export default function Pets(props) {
                   <Typography variant='h5' >{pet.client_email}</Typography>
                   </Container>
                   <Container disableGutters={true} sx={{display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <Button variant='contained' color='warning'>VIEW LOGS</Button>
+                  <Button variant='contained' color='warning' onClick={() => handlePetLog(pet.id)}>VIEW LOGS</Button>
                   <Button variant='contained' color='error'>DELETE</Button>
                   </Container>
                 </Item>

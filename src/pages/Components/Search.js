@@ -1,7 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { useState } from 'react';
 
 export default function Search(props) {
   function handlePets(value){
@@ -10,7 +9,7 @@ export default function Search(props) {
   return (
     <Autocomplete
       disablePortal
-      id="combo-box-demo"
+      id="search"
       onInputChange={(e, value) => handlePets(value)}
       options={props.data}
       getOptionLabel={(option) => option.name}

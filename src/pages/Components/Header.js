@@ -6,7 +6,7 @@ import Logo from '../images/Vet4Pets-logos_black.png'
 export default function Header() {
   return (
     <Container align='center' sx={{pt:2, pb:2}} disableGutters={true}>
-       <img src={Logo} alt='Logo' loading="lazy" height={100} />
+       <a href='/'><img src={Logo} alt='Logo' loading="lazy" height={100} /></a>
     <Divider></Divider>
     </Container>
   )

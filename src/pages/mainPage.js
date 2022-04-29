@@ -10,6 +10,8 @@ import Prescriptions from './Components/Prescriptions';
 
 export default function MainPage() {
   const [page, setPage] = useState('pets')
+  const [showPet, setShowPet] = useState('')
+  const [allPetsData, setAllPetsData] = useState([])
   const handleChange = (e) => setPage(e.target.value);
 
   return (
@@ -22,7 +24,9 @@ export default function MainPage() {
           <ToggleButton value="prescriptions">Prescriptions</ToggleButton>
         </ToggleButtonGroup>
         <Container>
-          {page === 'pets' ? <Pets page={[page, setPage]} /> : page === 'logs' ? <Logs/> : <Prescriptions/>}
+          {page === 'pets' ? <Pets page={[page, setPage]} showPet={[showPet, setShowPet]} setAllPetsData={setAllPetsData} />
+            : page === 'logs' ? <Logs showPet={[showPet, setShowPet]} allPetsData={allPetsData} />
+              : <Prescriptions />}
         </Container>
       </Container>
     </div>
