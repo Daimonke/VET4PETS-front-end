@@ -1,8 +1,7 @@
 import './App.css';
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 import LoadingPage from './pages/loadingPage'
-
-const MainPage = lazy(() => import("./pages/mainPage"));
+import MainPage from './pages/mainPage';
 
 function App() {
 
