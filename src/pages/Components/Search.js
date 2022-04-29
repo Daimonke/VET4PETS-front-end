@@ -4,7 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 export default function Search(props) {
   function handlePets(value){
-    props.setPets(props.data.filter(pet => pet.name.includes(value)))
+    props.setPets(props.data.filter(pet => pet.name.toLowerCase().includes(value.toLowerCase())))
   }
   return (
     <Autocomplete

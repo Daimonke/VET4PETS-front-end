@@ -24,11 +24,9 @@ export default function MainPage() {
           <ToggleButton value="logs">Logs</ToggleButton>
           <ToggleButton value="prescriptions">Prescriptions</ToggleButton>
         </ToggleButtonGroup>
-        <Container>
           {page === 'pets' ? <Pets page={[page, setPage]} showPet={[showPet, setShowPet]} setAllPetsData={setAllPetsData} />
             : page === 'logs' ? <Logs showPet={[showPet, setShowPet]} allPetsData={allPetsData} />
               : <Prescriptions />}
-        </Container>
       </Container>
       <Footer />
       </div>

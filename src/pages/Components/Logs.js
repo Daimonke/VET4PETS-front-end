@@ -34,7 +34,7 @@ function handleSearch(value){
   }, [showPet])
 
   return (
-    <Container disableGutters={true} >
+    <Container disableGutters={true} maxWidth={false} >
       {loading ? <Loading /> :
       <div>
         <Autocomplete

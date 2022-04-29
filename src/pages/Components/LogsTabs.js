@@ -57,7 +57,7 @@ export default function VerticalTabs(props) {
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
-                sx={{ borderRight: 1, borderColor: 'divider' }}
+                sx={{ borderRight: 1, borderColor: 'divider', width:'150px', display:'flex' }}
             >
                 {data.map((item, index) => {
                     return (
