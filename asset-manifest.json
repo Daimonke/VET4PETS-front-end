@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/VET4PETS-front-end/static/css/main.4f890350.css",
-    "main.js": "/VET4PETS-front-end/static/js/main.b6703875.js",
+    "main.js": "/VET4PETS-front-end/static/js/main.032d49e6.js",
     "static/media/Vet4Pets-logos_black.png": "/VET4PETS-front-end/static/media/Vet4Pets-logos_black.b3cbba0387f9a4c49b43.png",
     "index.html": "/VET4PETS-front-end/index.html",
     "main.4f890350.css.map": "/VET4PETS-front-end/static/css/main.4f890350.css.map",
-    "main.b6703875.js.map": "/VET4PETS-front-end/static/js/main.b6703875.js.map"
+    "main.032d49e6.js.map": "/VET4PETS-front-end/static/js/main.032d49e6.js.map"
   },
   "entrypoints": [
     "static/css/main.4f890350.css",
-    "static/js/main.b6703875.js"
+    "static/js/main.032d49e6.js"
   ]
 }
