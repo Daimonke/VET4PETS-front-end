@@ -10,22 +10,8 @@ import Prescriptions from './Components/Prescriptions';
 
 export default function MainPage() {
   const [page, setPage] = useState('pets')
-
   const handleChange = (e) => setPage(e.target.value);
 
-  // function signUp() {
-  //   axios.defaults.baseURL = API_URI
-  //     axios.post('/sign-up', {
-  //       username: username,
-  //       password: password
-  //     })
-  //       .then(function (res) {
-  //         console.log(res)
-  //         })
-  //       .catch(function (error) {
-  //         console.log(error)
-  //       })
-  //   }
   return (
     <div>
       <Container>
@@ -36,7 +22,7 @@ export default function MainPage() {
           <ToggleButton value="prescriptions">Prescriptions</ToggleButton>
         </ToggleButtonGroup>
         <Container>
-          {page === 'pets' ? <Pets /> : page === 'logs' ? <Logs/> : <Prescriptions/>}
+          {page === 'pets' ? <Pets page={[page, setPage]} /> : page === 'logs' ? <Logs/> : <Prescriptions/>}
         </Container>
       </Container>
     </div>

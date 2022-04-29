@@ -1,6 +1,6 @@
 import './App.css';
 import { Suspense, lazy } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoadingPage from './pages/loadingPage'
 
 const MainPage = lazy(() => import("./pages/mainPage"));
@@ -10,12 +10,12 @@ function App() {
 
   return (
     <Suspense fallback={<LoadingPage />}>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/*" element={<Page404 />} />
+          <Route path="/404" element={<Page404 />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </Suspense>
   );
 }
