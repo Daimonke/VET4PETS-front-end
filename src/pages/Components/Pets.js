@@ -34,10 +34,12 @@ export default function Pets(props) {
   }
   
   function handleDelete(id){
+    setLoading(true)
     axios.delete(`${API_URI}pets/${id}`)
+    .then(() => getPets())
   }
 
-  useEffect(() => {
+  function getPets(){
     axios.get(`${API_URI}pets`)
       .then(function (res) {
         setPetsData(res.data)
@@ -49,6 +51,9 @@ export default function Pets(props) {
       .catch(function (error) {
         console.log(error)
       })
+  }
+  useEffect(() => {
+    getPets()
   }, [])
 
   return (

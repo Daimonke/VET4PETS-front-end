@@ -24,7 +24,7 @@ function handleSearch(value){
     axios.get(`${API_URI}logs/`)
       .then(function (res) {
         setLogs(res.data)
-        if(showPet) setShowLogs(res.data.filter(item => item.id === showPet))
+        if(showPet) setShowLogs(res.data.filter(item => item.pet_id === showPet))
         if(!showPet) setShowLogs(res.data)
         setLoading(false)
       })
