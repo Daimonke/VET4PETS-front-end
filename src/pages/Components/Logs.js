@@ -41,7 +41,7 @@ function handleSearch(value){
       disablePortal
       id="search"
       onInputChange={(e, value) => handleSearch(value)}
-      options={allPetsData}
+      options={logs.filter((v,i,a)=>a.findIndex(v2=>(v2.name===v.name))===i)}
       getOptionLabel={(option) => option.name}
       sx={{ mt: 2 }}
       renderInput={(params) => <TextField {...params} label='Search by name' />}
