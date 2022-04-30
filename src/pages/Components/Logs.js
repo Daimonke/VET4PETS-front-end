@@ -8,13 +8,15 @@ import { Container } from '@mui/material'
 import VerticalTabs from './LogsTabs'
 import { Autocomplete } from '@mui/material'
 import { TextField } from '@mui/material'
+import AddLog from './AddLog'
 
 export default function Logs(props) {
-  const [showPet] = props.showPet
+  const [showPet, setShowPet] = props.showPet
   const [logs, setLogs] = useState([])
   const [showLogs, setShowLogs] = useState([])
   const allPetsData = props.allPetsData
   const [loading, setLoading] = useState(true)
+  const [refresh, setRefresh] = useState(false)
 
 function handleSearch(value){
   setShowLogs(logs.filter(log => log.name.includes(value)))
@@ -27,11 +29,12 @@ function handleSearch(value){
         if(showPet) setShowLogs(res.data.filter(item => item.pet_id === showPet))
         if(!showPet) setShowLogs(res.data)
         setLoading(false)
+        setRefresh(false)
       })
       .catch(function (error) {
         console.log(error)
       })
-  }, [showPet])
+  }, [showPet, refresh])
 
   return (
     <Container disableGutters={true} maxWidth={false} >
@@ -43,10 +46,12 @@ function handleSearch(value){
       onInputChange={(e, value) => handleSearch(value)}
       options={logs.filter((v,i,a)=>a.findIndex(v2=>(v2.name===v.name))===i)}
       getOptionLabel={(option) => option.name}
-      sx={{ mt: 2 }}
+      sx={{ mt: 2, mb: 2 }}
       renderInput={(params) => <TextField {...params} label='Search by name' />}
     />
+        <AddLog getLogs={setRefresh}></AddLog>
         {showLogs.length !== 0 ? <VerticalTabs data={showLogs}></VerticalTabs> : null}
+        
       </div>
       }
     </Container>

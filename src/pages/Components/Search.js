@@ -13,7 +13,7 @@ export default function Search(props) {
       onInputChange={(e, value) => handlePets(value)}
       options={props.data}
       getOptionLabel={(option) => option.name}
-      sx={{ mt: 2 }}
+      sx={{ mt: 2, mb: 2 }}
       renderInput={(params) => <TextField {...params} label='Search by name' />}
     />
   );

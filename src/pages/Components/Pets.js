@@ -5,6 +5,7 @@ import { Grid, Container, Paper } from '@mui/material'
 import axios from 'axios'
 import { React, useEffect, useState } from 'react'
 import { API_URI } from '../../config'
+import AddPet from './AddPet';
 import Loading from './Loading'
 import Search from './Search';
 
@@ -18,7 +19,8 @@ const Item = styled(Paper)(() => ({
   wordBreak: 'break-all',
   height: '220px', 
   gap: 20,
-  backgroundColor: 'rgb(72, 209, 180)',
+  backgroundColor: 'rgb(53, 206, 173)',
+  color: 'rgb(24, 77, 65)'
 }));
 
 export default function Pets(props) {
@@ -60,7 +62,8 @@ export default function Pets(props) {
     <Container disableGutters={true} >
       {loading ? <Loading /> :
       <div>
-        <Search data={petsData} setPets={setPets}></Search>
+        <Search data={petsData} setPets={setPets} ></Search>
+        <AddPet getPets={getPets}></AddPet>
         <Grid container spacing={3} pt={2} >
           {pets.map(pet => {
             return (
@@ -72,8 +75,8 @@ export default function Pets(props) {
                   <Typography variant='h5' >{pet.client_email}</Typography>
                   </Container>
                   <Container disableGutters={true} sx={{display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <Button variant='contained' color='warning' onClick={() => handlePetLog(pet.id)}>VIEW LOGS</Button>
-                  <Button variant='contained' color='error' onClick={() => handleDelete(pet.id)}>DELETE</Button>
+                  <Button variant='contained' color='warning' sx={{color: 'rgb(235, 235, 235)'}} onClick={() => handlePetLog(pet.id)}>VIEW LOGS</Button>
+                  <Button variant='contained' color='error' sx={{color: 'rgb(235, 235, 235)'}} onClick={() => handleDelete(pet.id)}>DELETE</Button>
                   </Container>
                 </Item>
               </Grid>
