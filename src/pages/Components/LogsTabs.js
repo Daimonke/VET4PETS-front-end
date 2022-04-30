@@ -76,6 +76,7 @@ export default function VerticalTabs(props) {
                                 <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Medicament: </b> {item.medicament}</Typography>
                                 <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Description:</b> {item.description}</Typography>
                                 <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Assigned:</b> {item.assign_time}</Typography>
+                                <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Comment:</b> {item.comment}</Typography>
                                 <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Client email:</b> {item.client_email}</Typography>
                                 <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Name:</b> {item.name}</Typography>
                                 <Typography variant='body1' color={'rgb(17, 61, 52)'}><b>Date of birth:</b> {item.dob}</Typography>
